@@ -5,13 +5,13 @@ require "pronto/circleci/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "pronto-circleci"
-  spec.version       = Pronto::Circleci::VERSION
+  spec.version       = Pronto::CircleCI::VERSION
   spec.authors       = ["Joaquín Moreira"]
   spec.email         = ["jmoreiras@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "Automate pronto run for use with circleci and github"
+  spec.description   = "Easily setup pronto runners with github and circleci"
+  spec.homepage      = "https://github.com/comparaonline/pronto-circleci"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -30,7 +30,11 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "pronto", "~> 0.9"
+
   spec.add_development_dependency "bundler", "~> 1.15"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "byebug"
+  spec.add_development_dependency "webmock", "~> 3.0"
 end

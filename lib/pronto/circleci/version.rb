@@ -1,5 +1,5 @@
 module Pronto
-  module Circleci
+  module CircleCI
     VERSION = "0.1.0"
   end
 end
