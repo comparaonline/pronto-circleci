@@ -14,24 +14,10 @@ RSpec.describe Pronto::CircleCI do
   end
 
   describe '#gem_root' do
-    context 'on a rails app' do
-      let(:path) { 'rails' }
-      before(:example) do
-        stub_const('Rails', Class.new)
-        allow(Rails).to receive('root') { path }
-      end
+    let(:path) { File.expand_path('../../../', __FILE__) }
 
-      it 'returns rails folder' do
-        expect(described_class.gem_root).to eq(path)
-      end
-    end
-
-    context 'outside a rails app' do
-      let(:path) { File.expand_path('../../../', __FILE__) }
-
-      it 'returns the root of the app' do
-        expect(described_class.gem_root).to eq(path)
-      end
+    it 'returns the root of the app' do
+      expect(described_class.gem_root).to eq(path)
     end
   end
 end

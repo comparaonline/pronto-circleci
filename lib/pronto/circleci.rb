@@ -14,7 +14,7 @@ module Pronto
     end
 
     def gem_root
-      File.expand_path('config', Dir.pwd)
+      Dir.pwd
     end
   end
 end

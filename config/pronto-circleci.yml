@@ -1,6 +1,6 @@
 github:
   org: 'comparaonline'
-  repo: 'some-repo'
+  repo: 'pronto-circleci'
 pronto:
   comments_on_diff: true
   reviews_on_diff: true

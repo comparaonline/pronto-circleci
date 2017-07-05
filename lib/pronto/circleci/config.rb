@@ -7,10 +7,14 @@ module Pronto
       include ::Singleton
 
       CONFIG_FILE_NAME = 'pronto-circleci.yml'.freeze
-      RAILS_CONFIG_FOLDER = 'config'.freeze
+      CONFIG_FOLDER = 'config'.freeze
 
       def initialize
-        file_path = File.join(CircleCI.gem_root, CONFIG_FILE_NAME)
+        file_path = File.join(
+          CircleCI.gem_root,
+          CONFIG_FOLDER,
+          CONFIG_FILE_NAME
+        )
         @values = YAML.load_file(file_path)
       end
 

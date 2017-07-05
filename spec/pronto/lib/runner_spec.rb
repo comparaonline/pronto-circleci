@@ -38,16 +38,6 @@ RSpec.describe Pronto::CircleCI::Runner do
     mock_default_config
   end
 
-  describe '#run' do
-    it "calls 'command_line' once per pull request" do
-      pull_requests_urls = GithubMock.pull_requests_urls
-      expect(described_class).to receive(:command_line).exactly(
-        pull_requests_urls.length
-      ).times
-      described_class.run(GithubMock.pull_requests_urls)
-    end
-  end
-
   describe '#command_line' do
     before(:example) do
       mock_flags(%w(comments_on_diff reviews_on_diff report_status), false)
@@ -61,19 +51,19 @@ RSpec.describe Pronto::CircleCI::Runner do
 
       it 'only sets default flag' do
         cmd = command_with_flags(pull_request, 'github')
-        expect(described_class.command_line(pull_request)).to eq(cmd)
+        expect(described_class.cmd(pull_request)).to eq(cmd)
       end
 
       it 'set a specific flag' do
         mock_flags(%w(reviews_on_diff), true)
         cmd = command_with_flags(pull_request, 'github_pr_review')
-        expect(described_class.command_line(pull_request)).to eq(cmd)
+        expect(described_class.cmd(pull_request)).to eq(cmd)
       end
 
       it 'sets two flags' do
         mock_flags(%w(comments_on_diff reviews_on_diff), true)
         cmd = command_with_flags(pull_request, 'github_pr github_pr_review')
-        expect(described_class.command_line(pull_request)).to eq(cmd)
+        expect(described_class.cmd(pull_request)).to eq(cmd)
       end
     end
   end

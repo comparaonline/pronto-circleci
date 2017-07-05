@@ -3,7 +3,7 @@ require 'pronto/circleci/pull_request'
 module Pronto
   module CircleCI
     module Runner
-      COMMAND = "GITHUB_ACCESS_TOKEN=#{ENV['GITHUB_ACCESS_TOKEN']} "\
+      COMMAND = "PRONTO_GITHUB_ACCESS_TOKEN=#{ENV['GITHUB_ACCESS_TOKEN']} "\
       "PRONTO_PULL_REQUEST_ID=%{pull_request_id} "\
       "bundle exec pronto run -f %{flags} -c origin/%{base_branch}"
 

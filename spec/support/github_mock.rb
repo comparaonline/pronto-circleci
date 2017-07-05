@@ -4,7 +4,7 @@ WebMock.enable!
 
 module GithubMock
   ORG = 'comparaonline'.freeze
-  REPO = 'some-repo'.freeze
+  REPO = 'pronto-circleci'.freeze
   ACCESS_TOKEN = 'dummy'.freeze
   DEFAULT_BRANCH = 'master'.freeze
   PULL_REQUESTS_IDS = [10, 20, 5]
