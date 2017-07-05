@@ -1,4 +1,4 @@
-require "pronto/circleci/config"
+require 'pronto/circleci/config'
 require 'json'
 require 'open-uri'
 
@@ -6,7 +6,7 @@ module Pronto
   module CircleCI
     class PullRequest
       GITHUB_API_URL = "https://api.github.com/repos/%{org}/%{repo}/pulls/"\
-        "%{pull_request_id}?access_token=#{ENV['GITHUB_ACCESS_TOKEN']}"
+        "%{pull_request_id}?access_token=#{ENV['PRONTO_GITHUB_ACCESS_TOKEN']}"
 
       attr_reader :id, :base_branch
 
@@ -18,7 +18,6 @@ module Pronto
             repo: Config.instance.get('github', 'repo'),
             pull_request_id: id
           }
-          # byebug
 
           response = JSON.load(open(api_url))
           new(id, extract_base_branch(response))

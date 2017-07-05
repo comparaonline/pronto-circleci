@@ -1,4 +1,4 @@
-require "pronto/circleci/version"
+require 'pronto/circleci/version'
 require 'pronto/circleci/runner'
 
 module Pronto
@@ -6,7 +6,7 @@ module Pronto
     module_function
 
     def run
-      Runner.new(pull_requests_urls)
+      Runner.run(pull_requests_urls)
     end
 
     def pull_requests_urls
@@ -14,8 +14,7 @@ module Pronto
     end
 
     def gem_root
-      return "#{Rails.root}" if defined?(Rails)
-      File.expand_path('../../../', __FILE__)
+      File.expand_path('config', Dir.pwd)
     end
   end
 end

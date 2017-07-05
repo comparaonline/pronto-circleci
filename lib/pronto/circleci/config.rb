@@ -6,7 +6,7 @@ module Pronto
     class Config
       include ::Singleton
 
-      CONFIG_FILE_NAME = 'pronto-circle.yml'.freeze
+      CONFIG_FILE_NAME = 'pronto-circleci.yml'.freeze
       RAILS_CONFIG_FOLDER = 'config'.freeze
 
       def initialize
