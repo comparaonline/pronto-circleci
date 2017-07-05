@@ -4,8 +4,8 @@ module Pronto
   module CircleCI
     module Runner
       COMMAND = "PRONTO_GITHUB_ACCESS_TOKEN=#{ENV['GITHUB_ACCESS_TOKEN']} "\
-      "PRONTO_PULL_REQUEST_ID=%{pull_request_id} "\
-      "bundle exec pronto run -f %{flags} -c origin/%{base_branch}"
+      'PRONTO_PULL_REQUEST_ID=%{pull_request_id} '\
+      'bundle exec pronto run -f %{flags} -c origin/%{base_branch}'.freeze
 
       FLAGS_MAP = {
         'comments_on_diff' => 'github_pr',
@@ -25,11 +25,12 @@ module Pronto
       end
 
       def cmd(pull_request)
-        COMMAND % {
+        format(
+          COMMAND,
           pull_request_id: pull_request.id,
           base_branch: pull_request.base_branch,
           flags: flags
-        }
+        )
       end
 
       def flags
