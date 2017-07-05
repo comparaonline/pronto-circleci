@@ -1,0 +1,7 @@
+github:
+  org: 'comparaonline'
+  repo: 'some-repo'
+pronto:
+  comments_on_diff: true
+  reviews_on_diff: true
+  report_status: true
