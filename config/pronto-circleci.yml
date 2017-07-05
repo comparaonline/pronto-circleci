@@ -3,5 +3,5 @@ github:
   repo: 'pronto-circleci'
 pronto:
   comments_on_diff: true
-  reviews_on_diff: true
+  reviews_on_diff: false
   report_status: true
