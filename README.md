@@ -1,28 +1,64 @@
-# Pronto::Circleci
+# pronto-circleci
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pronto/circleci`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem allows to simply setup [pronto](https://github.com/prontolabs/pronto) along with **circleci** and **github**.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+### Application setup
+
+Add the gem to your application's Gemfile:
 
 ```ruby
 gem 'pronto-circleci'
 ```
 
-And then execute:
+And then add the pronto runners of your choice (e.g. `pronto-rubocop`)
 
-    $ bundle
+```ruby
+gem 'pronto-rubocop'
+```
 
-Or install it yourself as:
+After that update your bundle:
+```
+$ bundle
+```
 
-    $ gem install pronto-circleci
+### CircleCI setup
+
+Setup circle to run pronto before your tests adding this to your `circle.yml`
+
+```
+test:
+  pre:
+    - bundle exec pronto-circleci
+```
+
+And finally setup an environment variable with a [Github access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use) in the [circleci environment configuration](https://circleci.com/docs/1.0/environment-variables/) of your repo with the name of: `GITHUB_ACCESS_TOKEN`.
+
 
 ## Usage
 
-TODO: Write usage instructions here
+Place a `pronto-circleci.yml` under the `config` folder of your app:
+
+```
+github:
+  org: 'comparaonline'
+  repo: 'pronto-circleci'
+pronto:
+  comments_on_diff: true
+  reviews_on_diff: true
+  report_status: true
+```
+
+### Config
+The config flags under the pronto key map to the regular pronto configuration flags:
+
+`comments_on_diff`: Comments appear on pull request diff.
+`reviews_on_diff`: Review appear on pull request diff.
+`report_status`: Report status check on pull request.
+
+Please note that these are optional and disabled by default.
+
 
 ## Development
 

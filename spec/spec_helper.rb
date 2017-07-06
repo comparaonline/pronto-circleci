@@ -1,3 +1,5 @@
+require_relative 'support/environment'
+require_relative 'support/github_mock'
 require "bundler/setup"
 require "pronto/circleci"
 

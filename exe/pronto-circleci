@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'pronto/circleci'
+
+Pronto::CircleCI.run
