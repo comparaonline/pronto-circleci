@@ -12,7 +12,7 @@ Add the gem to your application's Gemfile:
 gem 'pronto-circleci'
 ```
 
-Add then add the pronto runners of your choice (e.g. `pronto-rubocop`)
+And then add the pronto runners of your choice (e.g. `pronto-rubocop`)
 
 ```ruby
 gem 'pronto-rubocop'
