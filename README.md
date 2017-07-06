@@ -1,5 +1,8 @@
 # pronto-circleci
 
+[![Gem Version](https://badge.fury.io/rb/pronto-circleci.svg)](https://badge.fury.io/rb/pronto-circleci)
+[![CircleCI](https://circleci.com/gh/comparaonline/pronto-circleci/tree/master.svg?style=svg)](https://circleci.com/gh/comparaonline/pronto-circleci/tree/master)
+
 This gem allows to simply setup [pronto](https://github.com/prontolabs/pronto) along with **circleci** and **github**.
 
 ## Installation
