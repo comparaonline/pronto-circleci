@@ -10,7 +10,7 @@ module Pronto
     end
 
     def pull_requests_urls
-      return ENV['CI_PULL_REQUESTS'].split(',') if ENV['CI_PULL_REQUESTS'].present?
+      return ENV['CI_PULL_REQUESTS'].split(',') if ENV.key?('CI_PULL_REQUESTS')
       return []
     end
 
