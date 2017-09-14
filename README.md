@@ -36,7 +36,7 @@ test:
     - bundle exec pronto-circleci
 ```
 
-And finally setup an environment variable with a [Github access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use) in the [circleci environment configuration](https://circleci.com/docs/1.0/environment-variables/) of your repo with the name of: `GITHUB_ACCESS_TOKEN`.
+And finally setup an environment variable with a [Github access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use) in the [circleci environment configuration](https://circleci.com/docs/1.0/environment-variables/) of your repo with the name of: `PRONTO_GITHUB_ACCESS_TOKEN`.
 
 
 ## Usage
