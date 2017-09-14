@@ -10,7 +10,8 @@ module Pronto
     end
 
     def pull_requests_urls
-      ENV['CI_PULL_REQUESTS'].split(',')
+      return ENV['CI_PULL_REQUESTS'].split(',') if ENV.key?('CI_PULL_REQUESTS')
+      return []
     end
 
     def gem_root
