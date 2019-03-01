@@ -1,6 +1,0 @@
-machine:
-  ruby:
-    version: 2.3.4
-test:
-  pre:
-    - bundle exec ruby exe/pronto-circleci
