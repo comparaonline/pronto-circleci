@@ -6,7 +6,7 @@ module Pronto
   module CircleCI
     class PullRequest
       GITHUB_API_URL = 'https://api.github.com/repos/%{org}/%{repo}/pulls/'\
-        "%{pull_request_id}?access_token=#{ENV['GITHUB_ACCESS_TOKEN']}".freeze
+        "%{pull_request_id}?access_token=#{ENV['PRONTO_GITHUB_ACCESS_TOKEN']}".freeze
 
       attr_reader :id, :base_branch
 
